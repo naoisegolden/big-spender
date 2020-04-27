@@ -1,0 +1,37 @@
+{
+  "name": "big-spender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Chris Martin",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "dev": "parcel src/index.html",
+    "build-prod": "parcel build src/index.html"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "autoprefixer": "^9.7.6",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.7",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^2.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  }
+}
