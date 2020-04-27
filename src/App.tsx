@@ -1,14 +1,9 @@
-import * as React from "react";
+import React from "react";
 
-interface Props {
+interface AppProps {
   name: string;
 }
 
-class App extends React.Component<Props> {
-  render() {
-    const { name } = this.props;
-    return <div>Hello {name}</div>;
-  }
-}
-
-export default App;
+export const App: React.FC<AppProps> = ({ name }) => {
+  return <div>Hello {name}</div>;
+};
