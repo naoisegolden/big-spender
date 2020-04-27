@@ -1,18 +1,18 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "sourceMap": true,
+    "module": "es6",
+    "target": "es5",
+    "allowJs": true,
+    "jsx": "react",
     "strict": true,
+    "sourceMap": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
-    "module": "es6",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "removeComments": true,
-    "forceConsistentCasingInFileNames": true,
-    "target": "es5",
-    "allowJs": true,
-    "jsx": "react"
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*", "postcss.config.js", "declarations.d.ts"]
 }
