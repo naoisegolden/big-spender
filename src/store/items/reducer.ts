@@ -8,14 +8,23 @@ import {
 const initialState: ItemReducerModel = {
   totalMoney: 100000000000,
   items: [
-    { name: "House", cost: 0, amount: 5000000, src: "placeholder" },
-    {
-      name: "Airplane",
-      cost: 0,
-      amount: 10000000,
-      src: "placeholder",
-    },
+    { name: "Beach house", cost: 0, amount: 5000000, src: "placeholder" },
+    { name: "Airplane", cost: 0, amount: 10000000, src: "placeholder" },
   ],
+};
+
+const addItemUpdateReducer = (
+  state: ItemReducerModel,
+  action: ItemActionTypes
+): ItemReducerModel => {
+  return state;
+};
+
+const removeItemUpdateReducer = (
+  state: ItemReducerModel,
+  action: ItemActionTypes
+): ItemReducerModel => {
+  return state;
 };
 
 export const itemReducer = (
@@ -24,13 +33,9 @@ export const itemReducer = (
 ): ItemReducerModel => {
   switch (action.type) {
     case ADD_ITEM:
-      return {
-        ...initialState,
-      };
+      return addItemUpdateReducer(state, action);
     case REMOVE_ITEM:
-      return {
-        ...initialState,
-      };
+      return removeItemUpdateReducer(state, action);
     default:
       return state;
   }
