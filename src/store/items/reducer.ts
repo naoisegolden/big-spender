@@ -1,29 +1,54 @@
 import {
   ItemReducerModel,
   ItemActionTypes,
-  ADD_ITEM,
-  REMOVE_ITEM,
+  UPDATE_ITEM,
+  UPDATE_BILLIONAIRE,
+  UpdateItem,
+  UpdateBillionaire,
 } from "./types";
 
 const initialState: ItemReducerModel = {
-  totalMoney: 100000000000,
+  totalMoney: 1000,
+  billionaires: [],
+  currentBillionaire: { name: "", totalMoney: 0, introduction: "" },
   items: [
-    { name: "Beach house", cost: 0, amount: 5000000, src: "placeholder" },
-    { name: "Airplane", cost: 0, amount: 10000000, src: "placeholder" },
+    { name: "Beach house", quantity: 0, cost: 50, src: "placeholder" },
+    { name: "Airplane", quantity: 0, cost: 100, src: "placeholder" },
   ],
 };
 
-const addItemUpdateReducer = (
+const onUpdateItem = (
   state: ItemReducerModel,
-  action: ItemActionTypes
+  action: UpdateItem
 ): ItemReducerModel => {
-  return state;
+  const newQuantity = action.payload.quantity;
+  const indexOfItemToUpdate = state.items.findIndex(
+    (item) => item.name === action.payload.item.name
+  );
+  const itemToUpdate = state.items[indexOfItemToUpdate];
+  const updatedItem = { ...itemToUpdate, quantity: newQuantity };
+  const itemsCopy = [...state.items];
+  itemsCopy.splice(indexOfItemToUpdate, 1, updatedItem);
+
+  const updatedTotalMoney =
+    state.totalMoney -
+    itemToUpdate.cost * itemToUpdate.quantity +
+    itemToUpdate.cost * newQuantity;
+
+  return {
+    totalMoney: updatedTotalMoney,
+    billionaires: state.billionaires,
+    currentBillionaire: state.currentBillionaire,
+    items: itemsCopy,
+  };
 };
 
-const removeItemUpdateReducer = (
+const onUpdateBillionaire = (
   state: ItemReducerModel,
-  action: ItemActionTypes
+  action: UpdateBillionaire
 ): ItemReducerModel => {
+  // eslint-disable-next-line no-console
+  console.log(action);
   return state;
 };
 
@@ -32,10 +57,12 @@ export const itemReducer = (
   action: ItemActionTypes
 ): ItemReducerModel => {
   switch (action.type) {
-    case ADD_ITEM:
-      return addItemUpdateReducer(state, action);
-    case REMOVE_ITEM:
-      return removeItemUpdateReducer(state, action);
+    // case INIT_BILLIONAIRES:
+    //   return onInitBillionaires(state, action);
+    case UPDATE_ITEM:
+      return onUpdateItem(state, action);
+    case UPDATE_BILLIONAIRE:
+      return onUpdateBillionaire(state, action);
     default:
       return state;
   }

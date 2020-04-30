@@ -1,8 +1,15 @@
-import { Item, ADD_ITEM, REMOVE_ITEM, ItemActionTypes } from "./types";
+import {
+  Item,
+  ItemActionTypes,
+  UPDATE_ITEM,
+  UPDATE_BILLIONAIRE,
+  Billionaire,
+  INIT_BILLIONAIRES,
+} from "./types";
 
-export const addItem = (item: Item, quantity: number): ItemActionTypes => {
+export const updateItem = (item: Item, quantity: number): ItemActionTypes => {
   return {
-    type: ADD_ITEM,
+    type: UPDATE_ITEM,
     payload: {
       item,
       quantity,
@@ -10,12 +17,18 @@ export const addItem = (item: Item, quantity: number): ItemActionTypes => {
   };
 };
 
-export const removeItem = (item: Item, quantity: number): ItemActionTypes => {
+export const updateBillionaire = (
+  billionaire: Billionaire
+): ItemActionTypes => {
   return {
-    type: REMOVE_ITEM,
-    payload: {
-      item,
-      quantity,
-    },
+    type: UPDATE_BILLIONAIRE,
+    billionaire,
+  };
+};
+
+export const initBillionaires = (): ItemActionTypes => {
+  // make async request to fetch the billionaires from API and then add it to the return object
+  return {
+    type: INIT_BILLIONAIRES,
   };
 };

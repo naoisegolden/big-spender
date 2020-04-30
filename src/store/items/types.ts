@@ -1,33 +1,43 @@
 export interface Item {
   name: string;
+  quantity: number;
   cost: number;
-  amount: number;
   src: string;
+}
+
+export interface Billionaire {
+  name: string;
+  totalMoney: number;
+  introduction: string;
 }
 
 export interface ItemReducerModel {
   totalMoney: number;
   items: Item[];
+  billionaires: Billionaire[];
+  currentBillionaire: Billionaire;
 }
 
 // ActionTypes
-export const ADD_ITEM = "ADD_ITEM";
-export const REMOVE_ITEM = "REMOVE_ITEM";
+export const UPDATE_ITEM = "UPDATE_ITEM";
+export const INIT_BILLIONAIRES = "INIT_BILLIONAIRES";
+export const UPDATE_BILLIONAIRE = "UPDATE_BILLIONAIRE";
 
-interface AddItem {
-  type: typeof ADD_ITEM;
+export interface InitBillionaires {
+  type: typeof INIT_BILLIONAIRES;
+}
+
+export interface UpdateBillionaire {
+  type: typeof UPDATE_BILLIONAIRE;
+  billionaire: Billionaire;
+}
+
+export interface UpdateItem {
+  type: typeof UPDATE_ITEM;
   payload: {
     item: Item;
     quantity: number;
   };
 }
 
-interface RemoveItem {
-  type: typeof REMOVE_ITEM;
-  payload: {
-    item: Item;
-    quantity: number;
-  };
-}
-
-export type ItemActionTypes = AddItem | RemoveItem;
+export type ItemActionTypes = InitBillionaires | UpdateBillionaire | UpdateItem;
