@@ -13,7 +13,12 @@ import {
 const initialState: ItemReducerModel = {
   totalMoney: 1000,
   billionaires: [],
-  currentBillionaire: { name: "", totalMoney: 0, introduction: "" },
+  currentBillionaire: {
+    name: "",
+    totalMoney: 0,
+    introduction: "",
+    imageSrc: "",
+  },
   items: [
     { name: "Beach house", quantity: 0, cost: 50, src: "placeholder" },
     { name: "Airplane", quantity: 0, cost: 100, src: "placeholder" },
@@ -55,6 +60,7 @@ const onUpdateBillionaire = (
       name: action.billionaire.name,
       totalMoney: action.billionaire.totalMoney,
       introduction: action.billionaire.introduction,
+      imageSrc: action.billionaire.imageSrc,
     },
   };
   const updateTotalMoney = {

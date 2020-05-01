@@ -9,6 +9,7 @@ export interface Billionaire {
   name: string;
   totalMoney: number;
   introduction: string;
+  imageSrc: string;
 }
 
 export interface ItemReducerModel {
