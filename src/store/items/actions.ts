@@ -5,6 +5,7 @@ import {
   UPDATE_BILLIONAIRE,
   Billionaire,
   INIT_BILLIONAIRES,
+  SET_BILLIONAIRES,
 } from "./types";
 
 export const updateItem = (item: Item, quantity: number): ItemActionTypes => {
@@ -30,5 +31,14 @@ export const initBillionaires = (): ItemActionTypes => {
   // make async request to fetch the billionaires from API and then add it to the return object
   return {
     type: INIT_BILLIONAIRES,
+  };
+};
+
+export const setBillionaires = (
+  billionaires: Billionaire[]
+): ItemActionTypes => {
+  return {
+    type: SET_BILLIONAIRES,
+    billionaires,
   };
 };

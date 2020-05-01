@@ -21,6 +21,7 @@ export interface ItemReducerModel {
 // ActionTypes
 export const UPDATE_ITEM = "UPDATE_ITEM";
 export const INIT_BILLIONAIRES = "INIT_BILLIONAIRES";
+export const SET_BILLIONAIRES = "SET_BILLIONAIRES";
 export const UPDATE_BILLIONAIRE = "UPDATE_BILLIONAIRE";
 
 export interface InitBillionaires {
@@ -32,6 +33,11 @@ export interface UpdateBillionaire {
   billionaire: Billionaire;
 }
 
+export interface SetBillionaires {
+  type: typeof SET_BILLIONAIRES;
+  billionaires: Billionaire[];
+}
+
 export interface UpdateItem {
   type: typeof UPDATE_ITEM;
   payload: {
@@ -40,4 +46,8 @@ export interface UpdateItem {
   };
 }
 
-export type ItemActionTypes = InitBillionaires | UpdateBillionaire | UpdateItem;
+export type ItemActionTypes =
+  | InitBillionaires
+  | SetBillionaires
+  | UpdateBillionaire
+  | UpdateItem;

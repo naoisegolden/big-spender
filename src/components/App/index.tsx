@@ -6,12 +6,11 @@ import styles from "./App.scss";
 
 export const App: React.FC = () => {
   const items = useSelector((state: ItemReducerModel) => state.items);
-  // const totalMoney = useSelector((state: ItemReducerModel) => state.totalMoney);
   // const dispatch = useDispatch();
-
-  // const onUpdateItem = (item: Item, quantity: number): void => {
-  //   dispatch(actions.updateItem(item, quantity));
+  // const initBillionaires = (): void => {
+  //   dispatch(actions.initBillionaires());
   // };
+  // console.log(initBillionaires());
 
   return (
     <>
