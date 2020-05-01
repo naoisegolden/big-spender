@@ -9,6 +9,7 @@ export function* initBillionairesSaga() {
   try {
     const data = yield call(fetchData);
     yield put(actions.setBillionaires(data));
+    yield put(actions.updateBillionaire(data[0]));
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log(error);

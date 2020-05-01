@@ -2,11 +2,12 @@ import {
   ItemReducerModel,
   ItemActionTypes,
   UPDATE_ITEM,
-  // UPDATE_BILLIONAIRE,
+  UPDATE_BILLIONAIRE,
   UpdateItem,
-  // UpdateBillionaire,
+  UpdateBillionaire,
   SET_BILLIONAIRES,
   SetBillionaires,
+  Billionaire,
 } from "./types";
 
 const initialState: ItemReducerModel = {
@@ -45,14 +46,26 @@ const onUpdateItem = (
   };
 };
 
-// const onUpdateBillionaire = (
-//   state: ItemReducerModel,
-//   action: UpdateBillionaire
-// ): ItemReducerModel => {
-//   // eslint-disable-next-line no-console
-//   console.log(action);
-//   return state;
-// };
+const onUpdateBillionaire = (
+  state: ItemReducerModel,
+  action: UpdateBillionaire
+): ItemReducerModel => {
+  const currentBillionaire: { currentBillionaire: Billionaire } = {
+    currentBillionaire: {
+      name: action.billionaire.name,
+      totalMoney: action.billionaire.totalMoney,
+      introduction: action.billionaire.introduction,
+    },
+  };
+  const updateTotalMoney = {
+    totalMoney: action.billionaire.totalMoney,
+  };
+  return {
+    ...state,
+    ...currentBillionaire,
+    ...updateTotalMoney,
+  };
+};
 
 const onSetBillionaires = (
   state: ItemReducerModel,
@@ -76,8 +89,8 @@ export const itemReducer = (
       return onSetBillionaires(state, action);
     case UPDATE_ITEM:
       return onUpdateItem(state, action);
-    // case UPDATE_BILLIONAIRE:
-    //   return onUpdateBillionaire(state, action);
+    case UPDATE_BILLIONAIRE:
+      return onUpdateBillionaire(state, action);
     default:
       return state;
   }
