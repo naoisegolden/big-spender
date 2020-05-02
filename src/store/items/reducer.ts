@@ -16,7 +16,7 @@ const initialState: ItemReducerModel = {
   currentBillionaire: {
     name: "",
     totalMoney: 0,
-    introduction: "",
+    introduction: [""],
     imageSrc: "",
   },
   items: [

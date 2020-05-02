@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "module": "es6",
-    "target": "es6",
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "jsx": "react",
-    "strict": true,
-    "sourceMap": true,
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
