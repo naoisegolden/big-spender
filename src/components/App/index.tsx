@@ -6,17 +6,26 @@ import styles from "./App.scss";
 
 export const App: React.FC = () => {
   const items = useSelector((state: ItemReducerModel) => state.items);
-  const allReducer = useSelector((state: ItemReducerModel) => state);
+  // const totalMoney = useSelector((state: ItemReducerModel) => state.totalMoney);
+  // const billionaires = useSelector(
+  //   (state: ItemReducerModel) => state.billionaires
+  // );
+  // const currentBillionaire = useSelector(
+  //   (state: ItemReducerModel) => state.currentBillionaire
+  // );
+
+  // actions
   const dispatch = useDispatch();
   const initBillionaires = useCallback((): void => {
     dispatch(actions.initBillionaires());
   }, []);
+  // const updateBillionaire = (billionaire: Billionaire): void => {
+  //   dispatch(actions.updateBillionaire(billionaire));
+  // };
 
   useEffect(() => {
     initBillionaires();
   }, [initBillionaires]);
-
-  console.log(allReducer);
 
   return (
     <>
