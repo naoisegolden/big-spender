@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 100px 120px;
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
   background-color: $color-yellow;
 
   .name {

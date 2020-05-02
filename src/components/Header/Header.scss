@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 120px;
+  background-color: $color-yellow;
+  height: 70px;
+  width: 100vw;
+
+  img {
+    border: 2px solid $color-light-yellow;
+    border-radius: 50%;
+
+    &:hover {
+      transition: $transition;
+      border: 2px solid $color-dark-orange;
+      cursor: pointer;
+    }
+  }
+
+  .madeBy {
+    opacity: 0.8;
+    font-weight: bold;
+    font-size: 24px;
+    color: $color-dark-orange;
+
+    .light-yellow {
+      color: $color-light-yellow;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { ItemReducerModel } from "../../store/items/types";
 import * as actions from "../../store/items/actions";
 import { Homepage } from "../Homepage/index";
+import { Header } from "../Header/index";
 // import styles from "./App.scss";
 
 export const App: React.FC = () => {
@@ -28,5 +29,10 @@ export const App: React.FC = () => {
     initBillionaires();
   }, [initBillionaires]);
 
-  return <Homepage currentBillionaire={currentBillionaire} />;
+  return (
+    <>
+      <Header currentBillionaire={currentBillionaire} />
+      <Homepage currentBillionaire={currentBillionaire} />
+    </>
+  );
 };
