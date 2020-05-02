@@ -1,9 +1,12 @@
+@import "./styles/variables";
+
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: Roboto;
+  font-family: $font-roboto;
+  color: $color-black;
 }
 
 body {
