@@ -1,15 +1,21 @@
 import React from "react";
 import classNames from "classnames/bind";
-import { Item } from "../../store/items/types";
+import { Billionaire } from "../../store/items/types";
 import styles from "./Homepage.scss";
 
 const cx = classNames.bind(styles);
 
 interface HomepageProps {
-  items: Item[];
+  currentBillionaire: Billionaire;
 }
 
-export const Homepage: React.FC<HomepageProps> = ({ items }) => {
-  console.log(items);
-  return <div className={cx("homepage")}>Homepage</div>;
+export const Homepage: React.FC<HomepageProps> = ({ currentBillionaire }) => {
+  return (
+    <main className={cx("homepage")}>
+      <section>
+        <h1 className={cx("name")}>{currentBillionaire.name.toUpperCase()}</h1>
+        <p className={cx("introduction")}>{currentBillionaire.introduction}</p>
+      </section>
+    </main>
+  );
 };

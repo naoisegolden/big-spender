@@ -6,14 +6,14 @@ import { Homepage } from "../Homepage/index";
 // import styles from "./App.scss";
 
 export const App: React.FC = () => {
-  const items = useSelector((state: ItemReducerModel) => state.items);
+  // const items = useSelector((state: ItemReducerModel) => state.items);
   // const totalMoney = useSelector((state: ItemReducerModel) => state.totalMoney);
   // const billionaires = useSelector(
   //   (state: ItemReducerModel) => state.billionaires
   // );
-  // const currentBillionaire = useSelector(
-  //   (state: ItemReducerModel) => state.currentBillionaire
-  // );
+  const currentBillionaire = useSelector(
+    (state: ItemReducerModel) => state.currentBillionaire
+  );
 
   // actions
   const dispatch = useDispatch();
@@ -28,5 +28,5 @@ export const App: React.FC = () => {
     initBillionaires();
   }, [initBillionaires]);
 
-  return <Homepage items={items} />;
+  return <Homepage currentBillionaire={currentBillionaire} />;
 };
