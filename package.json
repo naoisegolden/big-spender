@@ -14,6 +14,7 @@
     "format": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "react": "^16.8.3",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -23,6 +24,7 @@
     "regenerator-runtime": "^0.13.5"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.10",
     "@types/node": "^13.13.4",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",

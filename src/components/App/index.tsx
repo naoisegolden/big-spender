@@ -2,7 +2,8 @@ import React, { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ItemReducerModel } from "../../store/items/types";
 import * as actions from "../../store/items/actions";
-import styles from "./App.scss";
+import { Homepage } from "../Homepage/index";
+// import styles from "./App.scss";
 
 export const App: React.FC = () => {
   const items = useSelector((state: ItemReducerModel) => state.items);
@@ -27,13 +28,5 @@ export const App: React.FC = () => {
     initBillionaires();
   }, [initBillionaires]);
 
-  return (
-    <>
-      {items.map((item) => (
-        <div key={item.cost} className={styles.app}>
-          Hello {item.name}
-        </div>
-      ))}
-    </>
-  );
+  return <Homepage items={items} />;
 };
