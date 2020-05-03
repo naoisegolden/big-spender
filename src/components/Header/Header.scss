@@ -13,6 +13,10 @@
     height: 150px;
   }
 
+  .imageContainer {
+    outline: none;
+  }
+
   img {
     border: 2px solid $color-light-yellow;
     border-radius: 50%;

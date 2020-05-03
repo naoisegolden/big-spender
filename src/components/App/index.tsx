@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { ItemReducerModel } from "../../store/items/types";
 import * as actions from "../../store/items/actions";
@@ -7,6 +7,12 @@ import { Header } from "../Header/index";
 // import styles from "./App.scss";
 
 export const App: React.FC = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
   // const items = useSelector((state: ItemReducerModel) => state.items);
   // const totalMoney = useSelector((state: ItemReducerModel) => state.totalMoney);
   // const billionaires = useSelector(
@@ -31,8 +37,19 @@ export const App: React.FC = () => {
 
   return (
     <>
-      <Header currentBillionaire={currentBillionaire} />
+      <Header
+        currentBillionaire={currentBillionaire}
+        toggleModal={toggleModal}
+      />
       <Homepage currentBillionaire={currentBillionaire} />
+      {/* {showModal && (
+        <Modal>
+          <DisplayBillionaires
+            billionaires={billionaires}
+            updateBillionaire={updateBillionaire}
+          />
+        </Modal>
+      )} */}
     </>
   );
 };
