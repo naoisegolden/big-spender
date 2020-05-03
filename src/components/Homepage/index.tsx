@@ -12,7 +12,10 @@ interface HomepageProps {
 
 export const Homepage: React.FC<HomepageProps> = ({ currentBillionaire }) => {
   const typewriter = (
-    <ReactRotatingText items={currentBillionaire.introduction} />
+    <ReactRotatingText
+      items={currentBillionaire.introduction}
+      deletingInterval={20}
+    />
   );
   return (
     <main className={cx("homepage")}>

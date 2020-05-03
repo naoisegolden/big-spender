@@ -23,18 +23,30 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
 
   return (
     <div className={cx("billionairesTable")}>
+      <div className={cx("title")}>
+        <p>Forbes&apos; Current Top 10 Billionaires</p>
+        <div
+          tabIndex={0}
+          role="button"
+          className={cx("close")}
+          onClick={toggleModal}
+          onKeyUp={toggleModal}
+        >
+          <i className="fas fa-times" />
+        </div>
+      </div>
       {billionaires.map((billionaire) => (
         <div key={billionaire.totalMoney} className={cx("row")}>
           <div className={cx("imageNameMoney")}>
             <img alt="billionaire" src={billionaire.imageSrc} />
             <div className={cx("nameMoney")}>
               <span>{billionaire.name}</span>
-              <span>
+              <span className={cx("totalMoney")}>
                 <strong>{`$${billionaire.totalMoney}`}</strong>
               </span>
             </div>
           </div>
-          <div className={cx("wealthSource")}>ZARA</div>
+          <div className={cx("wealthSource")}>PLACEHOLDER</div>
           <div className={cx("buttonContainer")}>
             <button
               type="button"

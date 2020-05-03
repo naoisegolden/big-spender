@@ -19,14 +19,14 @@
   }
 
   img {
-    border: 2px solid $color-light-yellow;
+    @include bordered($color-light-yellow, 2px);
     border-radius: 50%;
     height: 55px;
     width: 55px;
     transition: $transition;
 
     &:hover {
-      border: 2px solid $color-dark-orange;
+      @include bordered($color-dark-orange, 2px);
       cursor: pointer;
     }
 
