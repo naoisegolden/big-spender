@@ -6,12 +6,10 @@ const cx = classNames.bind(styles);
 
 interface ModalProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  children: any;
   showModal: boolean;
 }
 
 export const Modal: React.FC<ModalProps> = ({ children, showModal }) => {
-  console.log(children);
   return (
     <div
       className={cx("modal")}
@@ -20,7 +18,7 @@ export const Modal: React.FC<ModalProps> = ({ children, showModal }) => {
         opacity: showModal ? "1" : "0",
       }}
     >
-      Modal is visible
+      {children}
     </div>
   );
 };

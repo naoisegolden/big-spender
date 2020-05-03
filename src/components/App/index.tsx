@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ItemReducerModel } from "../../store/items/types";
+import { ItemReducerModel, Billionaire } from "../../store/items/types";
 import * as actions from "../../store/items/actions";
 import { Homepage } from "../Homepage/index";
 import { Header } from "../Header/index";
 import { Modal } from "../Modal/index";
+import { DisplayBillionaires } from "../DisplayBillionaires/index";
 // import styles from "./App.scss";
 
 export const App: React.FC = () => {
@@ -16,9 +17,9 @@ export const App: React.FC = () => {
 
   // const items = useSelector((state: ItemReducerModel) => state.items);
   // const totalMoney = useSelector((state: ItemReducerModel) => state.totalMoney);
-  // const billionaires = useSelector(
-  //   (state: ItemReducerModel) => state.billionaires
-  // );
+  const billionaires = useSelector(
+    (state: ItemReducerModel) => state.billionaires
+  );
   const currentBillionaire = useSelector(
     (state: ItemReducerModel) => state.currentBillionaire
   );
@@ -28,9 +29,9 @@ export const App: React.FC = () => {
   const initBillionaires = useCallback((): void => {
     dispatch(actions.initBillionaires());
   }, []);
-  // const updateBillionaire = (billionaire: Billionaire): void => {
-  //   dispatch(actions.updateBillionaire(billionaire));
-  // };
+  const updateBillionaire = (billionaire: Billionaire): void => {
+    dispatch(actions.updateBillionaire(billionaire));
+  };
 
   useEffect(() => {
     initBillionaires();
@@ -43,12 +44,12 @@ export const App: React.FC = () => {
         toggleModal={toggleModal}
       />
       <Homepage currentBillionaire={currentBillionaire} />
-      <Modal showModal={showModal}>Hello</Modal>
+      <Modal showModal={showModal}>
+        <DisplayBillionaires
+          billionaires={billionaires}
+          updateBillionaire={updateBillionaire}
+        />
+      </Modal>
     </>
   );
 };
-
-/* <DisplayBillionaires
-            billionaires={billionaires}
-            updateBillionaire={updateBillionaire}
-          /> */
