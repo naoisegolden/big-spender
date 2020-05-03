@@ -5,6 +5,7 @@ import * as actions from "../../store/items/actions";
 import { Homepage } from "../Homepage/index";
 import { Header } from "../Header/index";
 import { Modal } from "../Modal/index";
+import { TotalMoney } from "../TotalMoney/index";
 
 export const App: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -14,7 +15,7 @@ export const App: React.FC = () => {
   };
 
   // const items = useSelector((state: ItemReducerModel) => state.items);
-  // const totalMoney = useSelector((state: ItemReducerModel) => state.totalMoney);
+  const totalMoney = useSelector((state: ItemReducerModel) => state.totalMoney);
   const billionaires = useSelector(
     (state: ItemReducerModel) => state.billionaires
   );
@@ -48,6 +49,7 @@ export const App: React.FC = () => {
         updateBillionaire={updateBillionaire}
         showModal={showModal}
       />
+      <TotalMoney totalMoney={totalMoney} />
     </>
   );
 };
