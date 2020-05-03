@@ -6,17 +6,28 @@
   justify-content: space-between;
   padding: 0 120px;
   background-color: $color-yellow;
-  height: 70px;
+  height: 100px;
   width: 100vw;
+
+  @media (max-width: 1023px) {
+    height: 150px;
+  }
 
   img {
     border: 2px solid $color-light-yellow;
     border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    transition: $transition;
 
     &:hover {
-      transition: $transition;
       border: 2px solid $color-dark-orange;
       cursor: pointer;
+    }
+
+    @media (max-width: 1023px) {
+      height: 100px;
+      width: 100px;
     }
   }
 

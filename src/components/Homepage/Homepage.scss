@@ -2,9 +2,8 @@
 
 .homepage {
   display: flex;
-  // align-items: center;
   padding: 150px 120px;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 100px);
   background-color: $color-yellow;
 
   .name {

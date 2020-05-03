@@ -10,15 +10,9 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ currentBillionaire }) => {
-  console.log(currentBillionaire);
   return (
     <header className={cx("header")}>
-      <img
-        alt={currentBillionaire.name}
-        src={currentBillionaire.imageSrc}
-        height="45px"
-        width="45px"
-      />
+      <img alt={currentBillionaire.name} src={currentBillionaire.imageSrc} />
       <p className={cx("madeBy")}>
         <span className={cx("light-yellow")}>by</span> Chris Martin
       </p>
