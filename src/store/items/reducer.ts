@@ -18,6 +18,7 @@ const initialState: ItemReducerModel = {
     totalMoney: 0,
     introduction: [""],
     imageSrc: "",
+    wealthSource: "",
   },
   items: [
     { name: "Beach house", quantity: 0, cost: 50, src: "placeholder" },
@@ -61,6 +62,7 @@ const onUpdateBillionaire = (
       totalMoney: action.billionaire.totalMoney,
       introduction: action.billionaire.introduction,
       imageSrc: action.billionaire.imageSrc,
+      wealthSource: action.billionaire.wealthSource,
     },
   };
   const updateTotalMoney = {

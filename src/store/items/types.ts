@@ -10,6 +10,7 @@ export interface Billionaire {
   totalMoney: number;
   introduction: string[];
   imageSrc: string;
+  wealthSource: string;
 }
 
 export interface ItemReducerModel {

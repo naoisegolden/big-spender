@@ -46,7 +46,7 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
               </span>
             </div>
           </div>
-          <div className={cx("wealthSource")}>PLACEHOLDER</div>
+          <div className={cx("wealthSource")}>{billionaire.wealthSource}</div>
           <div className={cx("buttonContainer")}>
             <button
               type="button"

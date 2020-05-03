@@ -11,12 +11,14 @@ export const fetchData = async (): Promise<Billionaire> => {
         person: { name: string; squareImage: string };
         estWorthPrev: number;
         bios: string[];
+        source: string;
       }) => {
         return {
           name: billionaire.person.name,
           totalMoney: billionaire.estWorthPrev * 1000000,
           introduction: billionaire.bios,
           imageSrc: `https:${billionaire.person.squareImage}`,
+          wealthSource: billionaire.source,
         };
       }
     );
