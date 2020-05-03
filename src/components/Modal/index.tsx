@@ -1,15 +1,23 @@
 import React from "react";
 import classNames from "classnames/bind";
+
 import styles from "./Modal.scss";
+import { DisplayBillionaires } from "../DisplayBillionaires";
+import { Billionaire } from "../../store/items/types";
 
 const cx = classNames.bind(styles);
 
 interface ModalProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   showModal: boolean;
+  billionaires: Billionaire[];
+  updateBillionaire(billionaire: Billionaire): void;
 }
 
-export const Modal: React.FC<ModalProps> = ({ children, showModal }) => {
+export const Modal: React.FC<ModalProps> = ({
+  showModal,
+  billionaires,
+  updateBillionaire,
+}) => {
   return (
     <div
       className={cx("modal")}
@@ -18,7 +26,10 @@ export const Modal: React.FC<ModalProps> = ({ children, showModal }) => {
         opacity: showModal ? "1" : "0",
       }}
     >
-      {children}
+      <DisplayBillionaires
+        billionaires={billionaires}
+        updateBillionaire={updateBillionaire}
+      />
     </div>
   );
 };

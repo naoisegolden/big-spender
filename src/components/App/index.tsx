@@ -5,8 +5,6 @@ import * as actions from "../../store/items/actions";
 import { Homepage } from "../Homepage/index";
 import { Header } from "../Header/index";
 import { Modal } from "../Modal/index";
-import { DisplayBillionaires } from "../DisplayBillionaires/index";
-// import styles from "./App.scss";
 
 export const App: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -44,12 +42,11 @@ export const App: React.FC = () => {
         toggleModal={toggleModal}
       />
       <Homepage currentBillionaire={currentBillionaire} />
-      <Modal showModal={showModal}>
-        <DisplayBillionaires
-          billionaires={billionaires}
-          updateBillionaire={updateBillionaire}
-        />
-      </Modal>
+      <Modal
+        billionaires={billionaires}
+        updateBillionaire={updateBillionaire}
+        showModal={showModal}
+      />
     </>
   );
 };
