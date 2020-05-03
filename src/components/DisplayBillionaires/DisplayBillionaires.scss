@@ -1,3 +1,5 @@
+@import "../../styles/_variables.scss";
+
 .billionairesTable {
   width: 100%;
   height: 100%;
@@ -38,6 +40,23 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+    }
+
+    .buttonContainer {
+      button {
+        outline: none;
+        padding: 10px 14px;
+        border: 1px solid $color-black;
+        color: $color-black;
+        border-radius: 5px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $color-black;
+          color: $color-yellow;
+          border: 1px solid $color-yellow;
+        }
+      }
     }
   }
 }
