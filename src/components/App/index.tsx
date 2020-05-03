@@ -4,12 +4,13 @@ import { ItemReducerModel } from "../../store/items/types";
 import * as actions from "../../store/items/actions";
 import { Homepage } from "../Homepage/index";
 import { Header } from "../Header/index";
+import { Modal } from "../Modal/index";
 // import styles from "./App.scss";
 
 export const App: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
-  const toggleModal = () => {
+  const toggleModal = (): void => {
     setShowModal(!showModal);
   };
 
@@ -42,14 +43,12 @@ export const App: React.FC = () => {
         toggleModal={toggleModal}
       />
       <Homepage currentBillionaire={currentBillionaire} />
-      {/* {showModal && (
-        <Modal>
-          <DisplayBillionaires
-            billionaires={billionaires}
-            updateBillionaire={updateBillionaire}
-          />
-        </Modal>
-      )} */}
+      <Modal showModal={showModal}>Hello</Modal>
     </>
   );
 };
+
+/* <DisplayBillionaires
+            billionaires={billionaires}
+            updateBillionaire={updateBillionaire}
+          /> */
