@@ -8,13 +8,19 @@ const cx = classNames.bind(styles);
 interface DisplayBillionairesProps {
   billionaires: Billionaire[];
   updateBillionaire(billionaire: Billionaire): void;
+  toggleModal(): void;
 }
 
 export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
   billionaires,
   updateBillionaire,
+  toggleModal,
 }) => {
-  console.log(updateBillionaire);
+  const onUpdateBillionaire = (billionaire: Billionaire): void => {
+    updateBillionaire(billionaire);
+    toggleModal();
+  };
+
   return (
     <div className={cx("billionairesTable")}>
       {billionaires.map((billionaire) => (
@@ -30,7 +36,12 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
           </div>
           <div className={cx("wealthSource")}>ZARA</div>
           <div className={cx("buttonContainer")}>
-            <button type="button">SELECT</button>
+            <button
+              type="button"
+              onClick={(): void => onUpdateBillionaire(billionaire)}
+            >
+              SELECT
+            </button>
           </div>
         </div>
       ))}

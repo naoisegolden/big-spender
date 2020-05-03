@@ -11,12 +11,14 @@ interface ModalProps {
   showModal: boolean;
   billionaires: Billionaire[];
   updateBillionaire(billionaire: Billionaire): void;
+  toggleModal(): void;
 }
 
 export const Modal: React.FC<ModalProps> = ({
   showModal,
   billionaires,
   updateBillionaire,
+  toggleModal,
 }) => {
   return (
     <div
@@ -29,6 +31,7 @@ export const Modal: React.FC<ModalProps> = ({
       <DisplayBillionaires
         billionaires={billionaires}
         updateBillionaire={updateBillionaire}
+        toggleModal={toggleModal}
       />
     </div>
   );

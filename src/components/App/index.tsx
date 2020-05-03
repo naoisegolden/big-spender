@@ -43,6 +43,7 @@ export const App: React.FC = () => {
       />
       <Homepage currentBillionaire={currentBillionaire} />
       <Modal
+        toggleModal={toggleModal}
         billionaires={billionaires}
         updateBillionaire={updateBillionaire}
         showModal={showModal}
