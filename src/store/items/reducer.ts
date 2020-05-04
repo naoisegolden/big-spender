@@ -1,3 +1,5 @@
+import images from "../../utility/images";
+
 import {
   ItemReducerModel,
   ItemActionTypes,
@@ -21,8 +23,8 @@ const initialState: ItemReducerModel = {
     wealthSource: "",
   },
   items: [
-    { name: "Beach house", quantity: 0, cost: 50, src: "placeholder" },
-    { name: "Airplane", quantity: 0, cost: 100, src: "placeholder" },
+    { name: "Beach house", quantity: 0, cost: 50, src: images.beachHouse },
+    { name: "Airplane", quantity: 0, cost: 100, src: images.airplane },
   ],
 };
 

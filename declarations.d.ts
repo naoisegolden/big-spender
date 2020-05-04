@@ -4,3 +4,5 @@ declare module "*.scss" {
 }
 
 declare module "react-rotating-text";
+
+declare module "*.jpg";
