@@ -1,0 +1,17 @@
+@import "../../styles/_variables.scss";
+
+.introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  line-height: 2.5rem;
+  text-align: center;
+  padding: 100px 0;
+  background-color: $color-lightgrey;
+
+  p {
+    margin: 0;
+    width: 60%;
+  }
+}

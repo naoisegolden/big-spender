@@ -6,6 +6,7 @@ import { Homepage } from "../Homepage/index";
 import { Header } from "../Header/index";
 import { Modal } from "../Modal/index";
 import { TotalMoney } from "../TotalMoney/index";
+import { Introduction } from "../Introduction/index";
 
 export const App: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -50,6 +51,7 @@ export const App: React.FC = () => {
         showModal={showModal}
       />
       <TotalMoney totalMoney={totalMoney} />
+      <Introduction />
     </>
   );
 };
