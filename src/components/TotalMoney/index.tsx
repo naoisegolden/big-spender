@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames/bind";
+import { formatNumber } from "../../utility/formatNumber";
 import styles from "./TotalMoney.scss";
 
 const cx = classNames.bind(styles);
@@ -13,7 +14,7 @@ export const TotalMoney: React.FC<TotalMoneyProps> = ({ totalMoney }) => {
     <div className={cx("totalMoney")}>
       <p>
         <span>$</span>
-        {totalMoney}
+        {formatNumber(totalMoney)}
       </p>
     </div>
   );
