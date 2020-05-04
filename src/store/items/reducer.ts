@@ -23,8 +23,9 @@ const initialState: ItemReducerModel = {
     wealthSource: "",
   },
   items: [
-    { name: "Beach house", quantity: 0, cost: 50, src: images.beachHouse },
+    { name: "Beach House", quantity: 0, cost: 50, src: images.beachHouse },
     { name: "Airplane", quantity: 0, cost: 100, src: images.airplane },
+    { name: "Playstation", quantity: 0, cost: 200, src: images.airplane },
   ],
 };
 

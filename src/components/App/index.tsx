@@ -7,6 +7,7 @@ import { Header } from "../Header/index";
 import { Modal } from "../Modal/index";
 import { TotalMoney } from "../TotalMoney/index";
 import { Introduction } from "../Introduction/index";
+import { Items } from "../Items/index";
 
 export const App: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
@@ -15,7 +16,7 @@ export const App: React.FC = () => {
     setShowModal(!showModal);
   };
 
-  // const items = useSelector((state: ItemReducerModel) => state.items);
+  const items = useSelector((state: ItemReducerModel) => state.items);
   const totalMoney = useSelector((state: ItemReducerModel) => state.totalMoney);
   const billionaires = useSelector(
     (state: ItemReducerModel) => state.billionaires
@@ -52,6 +53,7 @@ export const App: React.FC = () => {
       />
       <TotalMoney totalMoney={totalMoney} />
       <Introduction />
+      <Items items={items} />
     </>
   );
 };
