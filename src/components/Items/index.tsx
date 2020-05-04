@@ -8,9 +8,31 @@ const cx = classNames.bind(styles);
 
 interface ItemsProps {
   items: Item[];
+  totalMoney: number;
+  updateItem(item: Item, quantity: number): void;
 }
 
-export const Items: React.FC<ItemsProps> = ({ items }) => {
+export const Items: React.FC<ItemsProps> = ({
+  items,
+  totalMoney,
+  updateItem,
+}) => {
+  const onInputChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    item: Item
+  ): void => {
+    const currentQuantity = item.quantity;
+    const requestedQuantity = +e.target.value;
+
+    // this check stops unnecessary action dispatches and to see if the user can afford the requested quantity
+    if (
+      (currentQuantity !== 0 || e.target.value.length !== 0) &&
+      totalMoney + currentQuantity * item.cost > item.cost * requestedQuantity
+    ) {
+      updateItem(item, requestedQuantity);
+    }
+  };
+
   const card = items.map((item) => {
     return (
       <div key={item.cost} className={cx("card")}>
@@ -18,6 +40,11 @@ export const Items: React.FC<ItemsProps> = ({ items }) => {
         <div className={cx("itemInfo")}>
           <span className={cx("itemCost")}>${formatNumber(item.cost)}</span>
           <p className={cx("itemName")}>{item.name}</p>
+          <input
+            value={item.quantity === 0 ? "" : item.quantity}
+            type="text"
+            onChange={(e): void => onInputChange(e, item)}
+          />
         </div>
       </div>
     );

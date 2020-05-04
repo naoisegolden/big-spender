@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { ItemReducerModel, Billionaire } from "../../store/items/types";
+import { ItemReducerModel, Billionaire, Item } from "../../store/items/types";
 import * as actions from "../../store/items/actions";
 import { Homepage } from "../Homepage/index";
 import { Header } from "../Header/index";
@@ -33,6 +33,9 @@ export const App: React.FC = () => {
   const updateBillionaire = (billionaire: Billionaire): void => {
     dispatch(actions.updateBillionaire(billionaire));
   };
+  const updateItem = (item: Item, quantity: number): void => {
+    dispatch(actions.updateItem(item, quantity));
+  };
 
   useEffect(() => {
     initBillionaires();
@@ -53,7 +56,7 @@ export const App: React.FC = () => {
       />
       <TotalMoney totalMoney={totalMoney} />
       <Introduction />
-      <Items items={items} />
+      <Items items={items} totalMoney={totalMoney} updateItem={updateItem} />
     </>
   );
 };

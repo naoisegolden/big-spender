@@ -24,7 +24,7 @@ const initialState: ItemReducerModel = {
   },
   items: [
     { name: "Beach House", quantity: 0, cost: 50, src: images.beachHouse },
-    { name: "Airplane", quantity: 0, cost: 100, src: images.airplane },
+    { name: "Airplane", quantity: 0, cost: 10000000, src: images.airplane },
     { name: "Playstation", quantity: 0, cost: 200, src: images.airplane },
   ],
 };
@@ -37,14 +37,15 @@ const onUpdateItem = (
   const indexOfItemToUpdate = state.items.findIndex(
     (item) => item.name === action.payload.item.name
   );
-  const itemToUpdate = state.items[indexOfItemToUpdate];
-  const updatedItem = { ...itemToUpdate, quantity: newQuantity };
+
   const itemsCopy = [...state.items];
+  const itemToUpdate = itemsCopy[indexOfItemToUpdate];
+  const updatedItem = { ...itemToUpdate, quantity: newQuantity };
   itemsCopy.splice(indexOfItemToUpdate, 1, updatedItem);
 
   const updatedTotalMoney =
-    state.totalMoney -
-    itemToUpdate.cost * itemToUpdate.quantity +
+    state.totalMoney +
+    itemToUpdate.cost * itemToUpdate.quantity -
     itemToUpdate.cost * newQuantity;
 
   return {
