@@ -17,6 +17,11 @@ export const Items: React.FC<ItemsProps> = ({
   totalMoney,
   updateItem,
 }) => {
+  const onUpdateItemByOne = (item: Item, quantity: number): void => {
+    const newQuantity = item.quantity + quantity;
+    updateItem(item, newQuantity);
+  };
+
   const onInputChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     item: Item
@@ -34,17 +39,38 @@ export const Items: React.FC<ItemsProps> = ({
   };
 
   const card = items.map((item) => {
+    const canBuy = totalMoney - item.cost > 0;
+    const canSell = item.quantity > 0;
+
     return (
       <div key={item.cost} className={cx("card")}>
         <img alt={item.name} src={item.src} />
         <div className={cx("itemInfo")}>
           <span className={cx("itemCost")}>${formatNumber(item.cost)}</span>
           <p className={cx("itemName")}>{item.name}</p>
-          <input
-            value={item.quantity === 0 ? "" : item.quantity}
-            type="text"
-            onChange={(e): void => onInputChange(e, item)}
-          />
+          <div className={cx("buttonAndInput")}>
+            <button
+              disabled={!canSell}
+              className={cx({ canSell })}
+              type="button"
+              onClick={(): void => onUpdateItemByOne(item, -1)}
+            >
+              SELL
+            </button>
+            <input
+              value={item.quantity === 0 ? "" : item.quantity}
+              type="text"
+              onChange={(e): void => onInputChange(e, item)}
+            />
+            <button
+              disabled={!canBuy}
+              className={cx({ canBuy })}
+              type="button"
+              onClick={(): void => onUpdateItemByOne(item, 1)}
+            >
+              BUY
+            </button>
+          </div>
         </div>
       </div>
     );
