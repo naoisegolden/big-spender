@@ -1,9 +1,9 @@
 import React from "react";
 import classNames from "classnames/bind";
-
-import styles from "./Modal.scss";
 import { DisplayBillionaires } from "../DisplayBillionaires";
+import { Backdrop } from "../Backdrop/index";
 import { Billionaire } from "../../store/items/types";
+import styles from "./Modal.scss";
 
 const cx = classNames.bind(styles);
 
@@ -21,18 +21,21 @@ export const Modal: React.FC<ModalProps> = ({
   toggleModal,
 }) => {
   return (
-    <div
-      className={cx("modal")}
-      style={{
-        transform: showModal ? "translateY(0)" : "translateY(-100vh)",
-        opacity: showModal ? "1" : "0",
-      }}
-    >
-      <DisplayBillionaires
-        billionaires={billionaires}
-        updateBillionaire={updateBillionaire}
-        toggleModal={toggleModal}
-      />
-    </div>
+    <>
+      {showModal && <Backdrop toggleModal={toggleModal} />}
+      <div
+        className={cx("modal")}
+        style={{
+          transform: showModal ? "translateY(0)" : "translateY(-100vh)",
+          opacity: showModal ? "1" : "0",
+        }}
+      >
+        <DisplayBillionaires
+          billionaires={billionaires}
+          updateBillionaire={updateBillionaire}
+          toggleModal={toggleModal}
+        />
+      </div>
+    </>
   );
 };

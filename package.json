@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rm -rf dist/*",
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url ./",
+    "build": "parcel build src/index.html --no-source-maps --public-url ./",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet",
     "format": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },

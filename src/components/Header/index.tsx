@@ -25,9 +25,7 @@ export const Header: React.FC<HeaderProps> = ({
       >
         <img alt={currentBillionaire.name} src={currentBillionaire.imageSrc} />
       </div>
-      <p className={cx("madeBy")}>
-        <span className={cx("light-yellow")}>by</span> Chris Martin
-      </p>
+      <p className={cx("madeBy")}>by Chris Martin</p>
     </header>
   );
 };

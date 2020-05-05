@@ -25,9 +25,9 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
       imageSrc: chrisImage,
       wealthSource: "Broke",
       introduction: [
-        "A frontend developer currently based in Barcelona.",
-        "Originally from Glasgow, Scotland and graduated from the University of Stirling with a B.A. Hons. in Sports Studies.",
-        "Currently working for Stuart, Europe’s leading on-demand logistics platform which connects businesses to a fleet of geolocalised independent couriers.",
+        "A frontend developer based in Barcelona.",
+        "Graduated from the University of Stirling with a BA (Hons) in Sports Studies in 2016. Originally from Glasgow, Scotland.",
+        "Currently working in Europe’s leading on-demand logistics platform which connects businesses, customers and couriers to revolutionise the way goods are transported.",
       ],
     };
 
