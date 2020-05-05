@@ -14,6 +14,8 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
+    "plugin:cypress/recommended",
+    "plugin:chai-friendly/recommended",
     "plugin:prettier/recommended",
   ],
   parserOptions: {

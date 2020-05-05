@@ -3,6 +3,4 @@ declare module "*.scss" {
   export = content;
 }
 
-declare module "react-rotating-text";
-
 declare module "*.jpg";
