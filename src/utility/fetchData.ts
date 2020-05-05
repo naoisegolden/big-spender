@@ -16,7 +16,7 @@ export const fetchData = async (): Promise<Billionaire> => {
         return {
           name: billionaire.person.name,
           totalMoney: Math.round(billionaire.finalWorth * 1000000),
-          introduction: billionaire.bios,
+          introduction: billionaire.bios[0],
           imageSrc: `https:${billionaire.person.squareImage}`,
           wealthSource: billionaire.source,
         };

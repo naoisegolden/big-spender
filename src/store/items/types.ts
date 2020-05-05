@@ -8,7 +8,7 @@ export interface Item {
 export interface Billionaire {
   name: string;
   totalMoney: number;
-  introduction: string[];
+  introduction: string;
   imageSrc: string;
   wealthSource: string;
 }
