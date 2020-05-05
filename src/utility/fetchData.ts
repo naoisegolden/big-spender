@@ -9,13 +9,13 @@ export const fetchData = async (): Promise<Billionaire> => {
     const billionaires = data.map(
       (billionaire: {
         person: { name: string; squareImage: string };
-        estWorthPrev: number;
+        finalWorth: number;
         bios: string[];
         source: string;
       }) => {
         return {
           name: billionaire.person.name,
-          totalMoney: billionaire.estWorthPrev * 1000000,
+          totalMoney: billionaire.finalWorth * 1000000,
           introduction: billionaire.bios,
           imageSrc: `https:${billionaire.person.squareImage}`,
           wealthSource: billionaire.source,

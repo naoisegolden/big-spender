@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import classNames from "classnames/bind";
 import { Billionaire } from "../../store/items/types";
 import { formatNumber } from "../../utility/formatNumber";
+import chrisImage from "../../assets/images/chris.jpg";
 import styles from "./DisplayBillionaires.scss";
 
 const cx = classNames.bind(styles);
@@ -17,6 +18,22 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
   updateBillionaire,
   toggleModal,
 }) => {
+  useEffect(() => {
+    const chris: Billionaire = {
+      name: "Chris Martin",
+      totalMoney: 100,
+      imageSrc: chrisImage,
+      wealthSource: "Broke",
+      introduction: [
+        "A frontend developer currently based in Barcelona.",
+        "Originally from Glasgow, Scotland and graduated from the University of Stirling with a B.A. Hons. in Sports Studies.",
+        "Currently working for Stuart, Europe’s leading on-demand logistics platform which connects businesses to a fleet of geolocalised independent couriers.",
+      ],
+    };
+
+    billionaires.push(chris);
+  }, [billionaires]);
+
   const onUpdateBillionaire = (billionaire: Billionaire): void => {
     updateBillionaire(billionaire);
     toggleModal();

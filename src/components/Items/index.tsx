@@ -39,7 +39,7 @@ export const Items: React.FC<ItemsProps> = ({
   };
 
   const card = items.map((item) => {
-    const canBuy = totalMoney - item.cost > 0;
+    const canBuy = totalMoney - item.cost >= 0;
     const canSell = item.quantity > 0;
 
     return (
