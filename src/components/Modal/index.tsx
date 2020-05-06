@@ -24,6 +24,7 @@ export const Modal: React.FC<ModalProps> = ({
     <>
       {showModal && <Backdrop toggleModal={toggleModal} />}
       <div
+        data-cy="modal"
         className={cx("modal")}
         style={{
           transform: showModal ? "translateY(0)" : "translateY(-100vh)",

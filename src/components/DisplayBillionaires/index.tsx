@@ -43,6 +43,7 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
       <div className={cx("title")}>
         <p>Forbes&apos; Current Top 10 Billionaires</p>
         <div
+          data-cy="closeModal"
           tabIndex={0}
           role="button"
           className={cx("close")}
