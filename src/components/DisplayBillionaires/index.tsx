@@ -54,12 +54,19 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
         </div>
       </div>
       {billionaires.map((billionaire) => (
-        <div key={billionaire.totalMoney} className={cx("row")}>
+        <div
+          data-cy="billionaireTable"
+          key={billionaire.totalMoney}
+          className={cx("row")}
+        >
           <div className={cx("imageNameMoney")}>
             <img alt="billionaire" src={billionaire.imageSrc} />
             <div className={cx("nameMoney")}>
               <span>{billionaire.name}</span>
-              <span className={cx("totalMoney")}>
+              <span
+                data-cy="billionaireTotalMoney"
+                className={cx("totalMoney")}
+              >
                 <strong>{`$${formatNumber(billionaire.totalMoney)}`}</strong>
               </span>
             </div>

@@ -11,7 +11,7 @@ interface TotalMoneyProps {
 
 export const TotalMoney: React.FC<TotalMoneyProps> = ({ totalMoney }) => {
   return (
-    <div className={cx("totalMoney")}>
+    <div data-cy="totalMoney" className={cx("totalMoney")}>
       <p>
         <span>$</span>
         {formatNumber(totalMoney)}
