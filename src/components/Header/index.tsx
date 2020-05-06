@@ -24,9 +24,15 @@ export const Header: React.FC<HeaderProps> = ({
         onClick={toggleModal}
         onKeyUp={toggleModal}
       >
-        <img alt={currentBillionaire.name} src={currentBillionaire.imageSrc} />
+        <img
+          data-cy="billionaireThumbnail"
+          alt={currentBillionaire.name}
+          src={currentBillionaire.imageSrc}
+        />
       </div>
-      <p className={cx("madeBy")}>by Chris Martin</p>
+      <p data-cy="madeBy" className={cx("madeBy")}>
+        by Chris Martin
+      </p>
     </header>
   );
 };
