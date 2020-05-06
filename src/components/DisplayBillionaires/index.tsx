@@ -71,7 +71,9 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
               </span>
             </div>
           </div>
-          <div className={cx("wealthSource")}>{billionaire.wealthSource}</div>
+          <div data-cy="wealthSource" className={cx("wealthSource")}>
+            {billionaire.wealthSource}
+          </div>
           <div className={cx("buttonContainer")}>
             <button
               data-cy="selectBillionaireBtn"

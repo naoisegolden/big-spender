@@ -43,13 +43,14 @@ export const Items: React.FC<ItemsProps> = ({
     const canSell = item.quantity > 0;
 
     return (
-      <div key={item.cost} className={cx("card")}>
+      <div data-cy="items" key={item.cost} className={cx("card")}>
         <img alt={item.name} src={item.src} />
         <div className={cx("itemInfo")}>
           <span className={cx("itemCost")}>${formatNumber(item.cost)}</span>
           <p className={cx("itemName")}>{item.name}</p>
           <div className={cx("buttonAndInput")}>
             <button
+              data-cy="sellButton"
               disabled={!canSell}
               className={cx({ canSell })}
               type="button"
@@ -63,6 +64,7 @@ export const Items: React.FC<ItemsProps> = ({
               onChange={(e): void => onInputChange(e, item)}
             />
             <button
+              data-cy="buyButton"
               disabled={!canBuy}
               className={cx({ canBuy })}
               type="button"
