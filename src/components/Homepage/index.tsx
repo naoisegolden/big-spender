@@ -13,8 +13,10 @@ export const Homepage: React.FC<HomepageProps> = ({ currentBillionaire }) => {
   return (
     <main className={cx("homepage")}>
       <section>
-        <h1 className={cx("name")}>{currentBillionaire.name.toUpperCase()}</h1>
-        <div className={cx("introduction")}>
+        <h1 data-cy="currentBillionaireName" className={cx("name")}>
+          {currentBillionaire.name.toUpperCase()}
+        </h1>
+        <div data-cy="currentBillionaireIntro" className={cx("introduction")}>
           {currentBillionaire.introduction}
         </div>
       </section>

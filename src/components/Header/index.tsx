@@ -17,6 +17,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className={cx("header")}>
       <div
+        data-cy="chooseBillionaireBtn"
         className={cx("imageContainer")}
         tabIndex={0}
         role="button"
