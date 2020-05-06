@@ -11,6 +11,7 @@ interface BackdropProps {
 
 export const Backdrop: React.FC<BackdropProps> = ({ toggleModal }) => (
   <div
+    data-cy="backdrop"
     tabIndex={0}
     role="button"
     onKeyUp={toggleModal}
