@@ -12,7 +12,7 @@ export const Introduction: React.FC = () => {
   League team. Be careful who you choose, they might not all be billionaires!`;
 
   return (
-    <div className={cx("introduction")}>
+    <div data-cy="introduction" className={cx("introduction")}>
       <p>{text}</p>
     </div>
   );
