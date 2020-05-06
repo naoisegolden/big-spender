@@ -72,8 +72,9 @@ export const DisplayBillionaires: React.FC<DisplayBillionairesProps> = ({
             </div>
           </div>
           <div className={cx("wealthSource")}>{billionaire.wealthSource}</div>
-          <div data-cy="selectBillionaireBtn" className={cx("buttonContainer")}>
+          <div className={cx("buttonContainer")}>
             <button
+              data-cy="selectBillionaireBtn"
               type="button"
               onClick={(): void => onUpdateBillionaire(billionaire)}
             >
