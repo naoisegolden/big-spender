@@ -1,0 +1,30 @@
+// colors
+$color-orange: #ff8f00;
+$color-dark-orange: #c56000;
+$color-yellow: #ffc046;
+$color-light-yellow: #ffe082;
+$color-black: #000000;
+$color-white: #fff;
+$color-lightgrey: #d3d3d3;
+$color-lightgreen: #85bb65;
+$color-green: #008000;
+$color-red: #dc143c;
+
+// spacers for padding and margin
+$spacer-base: 4px;
+$spacer-small: 8px;
+$spacer: 16px;
+$spacer-large: 32px;
+$spacer-xl: 48px;
+$spacer-xxl: 64px;
+
+// font
+$font-anton: "Anton";
+$font-roboto: "Roboto";
+
+@mixin bordered($color, $width) {
+  border: $width solid $color;
+}
+
+$border-radius: 5px;
+$transition: 0.2s all ease;

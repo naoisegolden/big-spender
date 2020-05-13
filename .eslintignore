@@ -1,0 +1,6 @@
+public/
+node_modules/
+plugins/
+dist/
+postcss.config.js
+cypress/integration/examples/*

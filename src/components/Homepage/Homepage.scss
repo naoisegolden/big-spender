@@ -1,0 +1,32 @@
+@import "../../styles/variables";
+
+.homepage {
+  display: flex;
+  padding: 150px 120px;
+  min-height: calc(100vh - 100px);
+  background-color: $color-yellow;
+
+  @media (max-width: 1023px) {
+    padding: 100px 5%;
+  }
+  .name {
+    background-color: inherit;
+    font-size: 150px;
+    margin: 0;
+    font-family: $font-anton;
+    line-height: 1;
+    letter-spacing: 0.3rem;
+
+    @media (max-width: 1023px) {
+      font-size: 60px;
+      max-width: 90%;
+    }
+  }
+
+  .introduction {
+    margin-top: $spacer-small;
+    font-size: 22px;
+    max-width: 700px;
+    letter-spacing: 0.1rem;
+  }
+}
